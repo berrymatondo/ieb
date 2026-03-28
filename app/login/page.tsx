@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { signIn, signUp } from "@/lib/auth-client"
@@ -12,6 +12,8 @@ import { Lock, Mail, AlertCircle, ArrowLeft, Eye, EyeOff, UserPlus, LogIn } from
 
 export default function LoginPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get("callbackUrl") || "/admin/messages"
   const [isSignUp, setIsSignUp] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -61,14 +63,12 @@ export default function LoginPage() {
         const result = await signIn.email({
           email,
           password,
-          callbackURL: "/admin/messages",
         })
 
         if (result.error) {
           setError(result.error.message || "Identifiants incorrects")
         } else {
-          // Force redirect to admin messages
-          window.location.href = "/admin/messages"
+          window.location.href = callbackUrl
         }
       }
     } catch (err) {
