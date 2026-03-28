@@ -94,7 +94,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <Image
-              src="/images/logo.png"
+              src="/placeholder-logo.png"
               alt="IEB Logo"
               width={80}
               height={80}
