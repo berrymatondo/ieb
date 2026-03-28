@@ -10,6 +10,8 @@ const protectedRoutes = [
 async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  console.log("request1: ", request.url);
+
   // Check if the route is protected
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route),
