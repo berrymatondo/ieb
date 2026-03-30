@@ -49,14 +49,13 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog"
 import { getConfig, getExpiringSoonDays } from "@/lib/config"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Settings } from "lucide-react"
 
 type Document = {
   id: string
   filename: string
   original_name: string
-  blob_url: string
+
   content_type: string
   size: number
   category: string
@@ -65,8 +64,7 @@ type Document = {
 }
 
 function getFileUrl(doc: Document) {
-  // Use the private file serving route with filename as pathname
-  return `/api/documents/file?pathname=${encodeURIComponent(doc.filename)}`
+  return `/api/documents/file?id=${doc.id}`
 }
 
 const CATEGORIES = [
@@ -220,8 +218,8 @@ export default function DocumentsPage() {
       })
 
       if (response.ok) {
-        const data = await response.json()
-        setDocuments(documents.map((d) => 
+        await response.json()
+        setDocuments(documents.map((d) =>
           d.id === editingDoc.id ? { ...d, category: editCategory, expiration_date: editExpirationDate || null } : d
         ))
         setEditingDoc(null)

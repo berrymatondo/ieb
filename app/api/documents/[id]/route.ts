@@ -1,4 +1,3 @@
-import { del } from "@vercel/blob"
 import { NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
@@ -27,29 +26,12 @@ export async function PATCH(
 }
 
 export async function DELETE(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params
 
-    // Get document info
-    const doc = await prisma.document.findUnique({
-      where: { id: parseInt(id) },
-    })
-
-    if (!doc) {
-      return NextResponse.json({ error: "Document non trouve" }, { status: 404 })
-    }
-
-    // Delete from Blob storage
-    try {
-      await del(doc.blobUrl)
-    } catch (blobError) {
-      console.error("Blob delete error:", blobError)
-    }
-
-    // Delete from database
     await prisma.document.delete({
       where: { id: parseInt(id) },
     })

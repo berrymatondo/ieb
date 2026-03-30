@@ -87,7 +87,7 @@ model Document {
   id             Int       @id @default(autoincrement())
   filename       String
   originalName   String    @map("original_name")
-  blobUrl        String    @map("blob_url")
+  data           Bytes
   contentType    String    @map("content_type")
   size           Int
   category       String    @default("general")

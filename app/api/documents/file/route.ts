@@ -1,40 +1,28 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { get } from "@vercel/blob"
+import { prisma } from "@/lib/prisma"
 
 export const dynamic = "force-dynamic"
 
 export async function GET(request: NextRequest) {
   try {
-    const pathname = request.nextUrl.searchParams.get("pathname")
+    const id = request.nextUrl.searchParams.get("id")
 
-    if (!pathname) {
-      return NextResponse.json({ error: "Missing pathname" }, { status: 400 })
+    if (!id) {
+      return NextResponse.json({ error: "Missing id" }, { status: 400 })
     }
 
-    const result = await get(pathname, {
-      access: "private",
-      ifNoneMatch: request.headers.get("if-none-match") ?? undefined,
+    const doc = await prisma.document.findUnique({
+      where: { id: parseInt(id) },
     })
 
-    if (!result) {
+    if (!doc) {
       return new NextResponse("Not found", { status: 404 })
     }
 
-    // Blob hasn't changed — tell the browser to use its cached copy
-    if (result.statusCode === 304) {
-      return new NextResponse(null, {
-        status: 304,
-        headers: {
-          ETag: result.blob.etag,
-          "Cache-Control": "private, no-cache",
-        },
-      })
-    }
-
-    return new NextResponse(result.stream, {
+    return new NextResponse(doc.data, {
       headers: {
-        "Content-Type": result.blob.contentType,
-        ETag: result.blob.etag,
+        "Content-Type": doc.contentType,
+        "Content-Disposition": `inline; filename="${doc.originalName}"`,
         "Cache-Control": "private, no-cache",
       },
     })
