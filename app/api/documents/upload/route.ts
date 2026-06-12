@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Upload error:", error)
     return NextResponse.json(
-      { error: "Echec de l'upload", details: error instanceof Error ? error.message : "Unknown error" },
+      { error: "Échec du téléversement", details: error instanceof Error ? error.message : "Erreur inconnue" },
       { status: 500 }
     )
   }

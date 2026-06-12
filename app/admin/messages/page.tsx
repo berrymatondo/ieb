@@ -22,10 +22,10 @@ import {
 const SERVICE_CATEGORIES: Record<string, string> = {
   "promotion-commerciale": "Promotion commerciale",
   "transport-logistique": "Transport et logistique",
-  "sous-traitance": "Sous-traitance de service",
+  "sous-traitance": "Sous-traitance de services",
   "immobilier": "Immobilier et gestion",
-  "agriculture": "Agriculture, peche et elevage",
-  "energie-renouvelable": "Energie solaire et renouvelable",
+  "agriculture": "Agriculture, pêche et élevage",
+  "energie-renouvelable": "Énergie solaire et renouvelable",
   "tourisme": "Tourisme",
   "environnement": "Assainissement environnemental",
   "autre": "Autre demande",
@@ -147,7 +147,7 @@ export default function AdminMessagesPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Etes-vous sur de vouloir supprimer ce message ?")) return
+    if (!confirm("Êtes-vous sûr de vouloir supprimer ce message ?")) return
     
     try {
       await fetch(`/api/messages/${id}`, { method: "DELETE" })
@@ -192,7 +192,7 @@ export default function AdminMessagesPage() {
               <div className="relative flex items-center gap-2 px-3 py-1.5 bg-muted rounded-full">
                 <Bell className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium">
-                  {stats.untreated} non traite{stats.untreated > 1 ? "s" : ""}
+                  {stats.untreated} non traité{stats.untreated !== 1 ? "s" : ""}
                 </span>
               </div>
               <Button variant="outline" size="icon" onClick={fetchMessages} disabled={loading}>
@@ -212,11 +212,11 @@ export default function AdminMessagesPage() {
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-2xl font-bold text-red-500">{stats.untreated}</p>
-            <p className="text-sm text-muted-foreground">Non traites</p>
+            <p className="text-sm text-muted-foreground">Non traités</p>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-2xl font-bold text-green-500">{stats.treated}</p>
-            <p className="text-sm text-muted-foreground">Traites</p>
+            <p className="text-sm text-muted-foreground">Traités</p>
           </div>
         </div>
 
@@ -237,8 +237,8 @@ export default function AdminMessagesPage() {
                 <Button variant="outline" className="gap-2">
                   <Filter className="h-4 w-4" />
                   {filterStatus === "all" && "Tous"}
-                  {filterStatus === "treated" && "Traites"}
-                  {filterStatus === "untreated" && "Non traites"}
+                  {filterStatus === "treated" && "Traités"}
+                  {filterStatus === "untreated" && "Non traités"}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -247,10 +247,10 @@ export default function AdminMessagesPage() {
                   Tous les messages
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setFilterStatus("untreated")}>
-                  Non traites uniquement
+                  Non traités uniquement
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setFilterStatus("treated")}>
-                  Traites uniquement
+                  Traités uniquement
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -277,13 +277,13 @@ export default function AdminMessagesPage() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="gap-2">
                   <Calendar className="h-4 w-4" />
-                  {sortOrder === "newest" ? "Recents" : "Anciens"}
+                  {sortOrder === "newest" ? "Récents" : "Anciens"}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => setSortOrder("newest")}>
-                  Plus recents
+                  Plus récents
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setSortOrder("oldest")}>
                   Plus anciens
@@ -310,7 +310,7 @@ export default function AdminMessagesPage() {
             ) : filteredMessages.length === 0 ? (
               <div className="p-8 text-center">
                 <Mail className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
-                <p className="text-muted-foreground">Aucun message trouve</p>
+                <p className="text-muted-foreground">Aucun message trouvé</p>
               </div>
             ) : (
               <div className="divide-y divide-border max-h-[600px] overflow-y-auto">
@@ -377,17 +377,17 @@ export default function AdminMessagesPage() {
             {selectedMessage ? (
               <>
                 <div className="p-4 border-b border-border flex items-center justify-between">
-                  <h2 className="font-semibold text-foreground">Detail du message</h2>
+                  <h2 className="font-semibold text-foreground">Détail du message</h2>
                   <div className="flex items-center gap-2">
                     {selectedMessage.treated ? (
                       <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
                         <CheckCircle2 className="h-3 w-3" />
-                        Traite
+                        Traité
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">
                         <Circle className="h-3 w-3" />
-                        Non traite
+                        Non traité
                       </span>
                     )}
                   </div>
@@ -451,12 +451,12 @@ export default function AdminMessagesPage() {
                       {selectedMessage.treated ? (
                         <>
                           <Circle className="mr-2 h-4 w-4" />
-                          Marquer non traite
+                          Marquer comme non traité
                         </>
                       ) : (
                         <>
                           <CheckCircle2 className="mr-2 h-4 w-4" />
-                          Marquer traite
+                          Marquer comme traité
                         </>
                       )}
                     </Button>
@@ -466,7 +466,7 @@ export default function AdminMessagesPage() {
                     >
                       <a href={`mailto:${selectedMessage.email}?subject=Re: ${selectedMessage.subject}`}>
                         <Mail className="mr-2 h-4 w-4" />
-                        Repondre
+                        Répondre
                       </a>
                     </Button>
                   </div>
@@ -475,7 +475,7 @@ export default function AdminMessagesPage() {
             ) : (
               <div className="p-8 text-center h-full flex flex-col items-center justify-center min-h-[400px]">
                 <Mail className="h-12 w-12 text-muted-foreground/50 mb-4" />
-                <p className="text-muted-foreground">Selectionnez un message pour voir les details</p>
+                <p className="text-muted-foreground">Sélectionnez un message pour voir les détails</p>
               </div>
             )}
           </div>

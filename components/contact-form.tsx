@@ -17,10 +17,10 @@ import {
 const SERVICE_CATEGORIES = [
   { value: "promotion-commerciale", label: "Promotion commerciale" },
   { value: "transport-logistique", label: "Transport et logistique" },
-  { value: "sous-traitance", label: "Sous-traitance de service" },
+  { value: "sous-traitance", label: "Sous-traitance de services" },
   { value: "immobilier", label: "Immobilier et gestion" },
-  { value: "agriculture", label: "Agriculture, peche et elevage" },
-  { value: "energie-renouvelable", label: "Energie solaire et renouvelable" },
+  { value: "agriculture", label: "Agriculture, pêche et élevage" },
+  { value: "energie-renouvelable", label: "Énergie solaire et renouvelable" },
   { value: "tourisme", label: "Tourisme" },
   { value: "environnement", label: "Assainissement environnemental" },
   { value: "autre", label: "Autre demande" },
@@ -141,10 +141,10 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
-        <Label htmlFor="category" className="text-sm">Service concerne</Label>
+        <Label htmlFor="category" className="text-sm">Service concerné</Label>
         <Select value={category} onValueChange={setCategory} required>
           <SelectTrigger className="h-10 sm:h-11">
-            <SelectValue placeholder="Selectionnez un service" />
+            <SelectValue placeholder="Sélectionnez un service" />
           </SelectTrigger>
           <SelectContent>
             {SERVICE_CATEGORIES.map((cat) => (

@@ -68,11 +68,11 @@ function getFileUrl(doc: Document) {
 }
 
 const CATEGORIES = [
-  { value: "general", label: "General" },
+  { value: "general", label: "Général" },
   { value: "contrats", label: "Contrats" },
   { value: "factures", label: "Factures" },
   { value: "rapports", label: "Rapports" },
-  { value: "ressources-humaines", label: "Ressources Humaines" },
+  { value: "ressources-humaines", label: "Ressources humaines" },
   { value: "marketing", label: "Marketing" },
   { value: "juridique", label: "Juridique" },
   { value: "autre", label: "Autre" },
@@ -162,7 +162,7 @@ export default function DocumentsPage() {
         const data = await response.json()
 
         if (!response.ok) {
-          setUploadError(data.details || data.error || "Echec de l'upload")
+          setUploadError(data.details || data.error || "Échec du téléversement")
           console.error("Upload error response:", data)
         } else {
           setUploadSuccess(true)
@@ -179,7 +179,7 @@ export default function DocumentsPage() {
   }
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Etes-vous sur de vouloir supprimer ce document ?")) return
+    if (!confirm("Êtes-vous sûr de vouloir supprimer ce document ?")) return
 
     setDeleting(id)
     try {
@@ -278,7 +278,7 @@ export default function DocumentsPage() {
               </Link>
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Documents</h1>
-                <p className="text-sm text-muted-foreground">Gerez vos fichiers et documents</p>
+                <p className="text-sm text-muted-foreground">Gérez vos fichiers et documents</p>
               </div>
             </div>
             <Button onClick={() => fetchDocuments()} variant="outline" className="gap-2">
@@ -340,7 +340,7 @@ export default function DocumentsPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-orange-600">{getConfig().EXPIRING_SOON_WEEKS}</p>
-                  <p className="text-xs text-muted-foreground">Semaines alerte</p>
+                  <p className="text-xs text-muted-foreground">Semaines d&apos;alerte</p>
                 </div>
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function DocumentsPage() {
                 <div>
                   <p className="text-sm font-medium text-foreground">Configuration des alertes d&apos;expiration</p>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Les documents expirant dans les <span className="font-semibold text-orange-600">{getConfig().EXPIRING_SOON_WEEKS} semaines</span> ({getExpiringSoonDays()} jours) seront signales par une notification.
+                    Les documents expirant dans les <span className="font-semibold text-orange-600">{getConfig().EXPIRING_SOON_WEEKS} semaines</span> ({getExpiringSoonDays()} jours) seront signalés par une notification.
                   </p>
                 </div>
               </div>
@@ -371,7 +371,7 @@ export default function DocumentsPage() {
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <div>
-                <Label htmlFor="category" className="text-sm mb-2 block">Categorie</Label>
+                <Label htmlFor="category" className="text-sm mb-2 block">Catégorie</Label>
                 <Select value={uploadCategory} onValueChange={setUploadCategory}>
                   <SelectTrigger className="w-full sm:w-48">
                     <SelectValue />
@@ -386,7 +386,7 @@ export default function DocumentsPage() {
                 </Select>
               </div>
               <div>
-                <Label htmlFor="expiration" className="text-sm mb-2 block">Date d&apos;echeance (optionnel)</Label>
+                <Label htmlFor="expiration" className="text-sm mb-2 block">Date d&apos;échéance (optionnel)</Label>
                 <Input
                   id="expiration"
                   type="date"
@@ -408,7 +408,7 @@ export default function DocumentsPage() {
             )}
             {uploadSuccess && (
               <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
-                Document uploade avec succes !
+                Document téléversé avec succès !
               </div>
             )}
 
@@ -436,10 +436,10 @@ export default function DocumentsPage() {
                 </div>
                 <div>
                   <p className="text-lg font-medium text-foreground">
-                    {uploading ? "Upload en cours..." : "Glissez vos fichiers ici"}
+                    {uploading ? "Téléversement en cours..." : "Glissez vos fichiers ici"}
                   </p>
                   <p className="text-sm text-muted-foreground mt-1">
-                    ou cliquez pour selectionner des fichiers (PDF, images, documents...)
+                    ou cliquez pour sélectionner des fichiers (PDF, images, documents...)
                   </p>
                 </div>
               </div>
@@ -470,14 +470,14 @@ export default function DocumentsPage() {
                 <Button variant="outline" className="gap-2">
                   <Filter className="h-4 w-4" />
                   {filterCategory === "all" 
-                    ? "Toutes categories" 
+                    ? "Toutes catégories"
                     : CATEGORIES.find((c) => c.value === filterCategory)?.label}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => setFilterCategory("all")}>
-                  Toutes categories
+                  Toutes catégories
                 </DropdownMenuItem>
                 {CATEGORIES.map((cat) => (
                   <DropdownMenuItem key={cat.value} onClick={() => setFilterCategory(cat.value)}>
@@ -499,8 +499,8 @@ export default function DocumentsPage() {
               <h3 className="text-lg font-medium text-foreground mb-2">Aucun document</h3>
               <p className="text-sm text-muted-foreground">
                 {searchQuery || filterCategory !== "all"
-                  ? "Aucun document ne correspond a vos criteres"
-                  : "Commencez par uploader vos premiers fichiers"}
+                  ? "Aucun document ne correspond à vos critères"
+                  : "Commencez par téléverser vos premiers fichiers"}
               </p>
             </div>
           ) : (
@@ -532,7 +532,7 @@ export default function DocumentsPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-2 bg-background rounded-lg hover:bg-background/90 transition-colors"
-                          title="Telecharger"
+                          title="Télécharger"
                         >
                           <Download className="h-4 w-4 text-foreground" />
                         </a>
@@ -601,7 +601,7 @@ export default function DocumentsPage() {
               <p className="text-sm text-muted-foreground">{editingDoc?.original_name}</p>
             </div>
             <div>
-              <Label htmlFor="editCategory" className="text-sm mb-2 block">Categorie</Label>
+              <Label htmlFor="editCategory" className="text-sm mb-2 block">Catégorie</Label>
               <Select value={editCategory} onValueChange={setEditCategory}>
                 <SelectTrigger>
                   <SelectValue />
@@ -616,7 +616,7 @@ export default function DocumentsPage() {
               </Select>
             </div>
             <div>
-              <Label htmlFor="editExpiration" className="text-sm mb-2 block">Date d&apos;echeance</Label>
+              <Label htmlFor="editExpiration" className="text-sm mb-2 block">Date d&apos;échéance</Label>
               <Input
                 id="editExpiration"
                 type="date"
@@ -624,7 +624,7 @@ export default function DocumentsPage() {
                 onChange={(e) => setEditExpirationDate(e.target.value)}
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Laissez vide si le document n&apos;a pas de date d&apos;echeance
+                Laissez vide si le document n&apos;a pas de date d&apos;échéance
               </p>
             </div>
           </div>

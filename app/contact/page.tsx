@@ -3,18 +3,18 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
-import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, Clock, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Contact | Infinity Express Business",
-  description: "Contactez IEB SARLU pour vos besoins en promotion commerciale, transport, sous-traitance ou immobilier a Lubumbashi, RDC.",
+  description: "Contactez IEB SARLU pour vos besoins en promotion commerciale, transport, sous-traitance ou immobilier à Lubumbashi, RDC.",
 }
 
 const contactInfo = [
   {
     icon: Phone,
-    label: "Telephone",
+    label: "Téléphone",
     value: "+243 816 638 807",
     href: "tel:+243816638807",
   },
@@ -26,15 +26,21 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    label: "Siege social",
+    label: "Siège social",
     value: "55, Av. Lac Kipopo, Q/Baudoin, Lubumbashi",
     href: null,
   },
   {
     icon: Clock,
     label: "Horaires",
-    value: "Lun - Ven : 8h - 17h",
+    value: "Lun. - Ven. : 8 h - 17 h",
     href: null,
+  },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    value: "@infinity_express_business",
+    href: "https://www.instagram.com/infinity_express_business?utm_source=qr",
   },
 ]
 
@@ -64,7 +70,7 @@ export default function ContactPage() {
                 Parlons de votre projet
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-background/80">
-                Vous avez des questions ou souhaitez obtenir un devis ? N&apos;hesitez pas a nous contacter. Notre equipe est a votre disposition pour vous accompagner dans tous vos projets.
+                Vous avez des questions ou souhaitez obtenir un devis ? N&apos;hésitez pas à nous contacter. Notre équipe est à votre disposition pour vous accompagner dans tous vos projets.
               </p>
             </div>
           </div>
@@ -92,6 +98,8 @@ export default function ContactPage() {
                         {info.href ? (
                           <a
                             href={info.href}
+                            target={info.href.startsWith("http") ? "_blank" : undefined}
+                            rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
                             className="text-sm sm:text-base text-foreground font-medium hover:text-primary transition-colors break-all"
                           >
                             {info.value}

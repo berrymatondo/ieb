@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Menu, X, Bell, FolderOpen, Settings, LogOut, LogIn } from "lucide-react"
@@ -66,8 +67,15 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-            IEB
+          <div className="relative h-10 w-16 overflow-hidden rounded-md bg-white sm:w-20">
+            <Image
+              src="/images/ieb-logo.jpeg"
+              alt="Infinity Express Business"
+              fill
+              sizes="80px"
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="hidden sm:block font-semibold text-foreground">
             Infinity Express
@@ -99,7 +107,7 @@ export function Header() {
               <Link 
                 href="/admin/parametres" 
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors group"
-                title="Parametres"
+                title="Paramètres"
               >
                 <Settings className="h-5 w-5 group-hover:scale-110 group-hover:rotate-90 transition-transform duration-300" />
               </Link>
@@ -107,7 +115,7 @@ export function Header() {
               <Link 
                 href="/admin/documents" 
                 className="relative p-2 text-muted-foreground hover:text-foreground transition-colors group"
-                title={expiringDocsCount > 0 ? `${expiringDocsCount} document${expiringDocsCount !== 1 ? 's' : ''} expire${expiringDocsCount !== 1 ? 'nt' : ''} bientot` : "Documents"}
+                title={expiringDocsCount > 0 ? `${expiringDocsCount} document${expiringDocsCount !== 1 ? 's' : ''} expire${expiringDocsCount !== 1 ? 'nt' : ''} bientôt` : "Documents"}
               >
                 <FolderOpen className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 {expiringDocsCount > 0 && (
@@ -133,7 +141,7 @@ export function Header() {
               <button
                 onClick={handleLogout}
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors group"
-                title="Deconnexion"
+                title="Déconnexion"
               >
                 <LogOut className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </button>
@@ -163,14 +171,14 @@ export function Header() {
               <Link 
                 href="/admin/parametres" 
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                title="Parametres"
+                title="Paramètres"
               >
                 <Settings className="h-5 w-5" />
               </Link>
               <Link 
                 href="/admin/documents" 
                 className="relative p-2 text-muted-foreground hover:text-foreground transition-colors"
-                title={expiringDocsCount > 0 ? `${expiringDocsCount} document${expiringDocsCount !== 1 ? 's' : ''} expire${expiringDocsCount !== 1 ? 'nt' : ''} bientot` : "Documents"}
+                title={expiringDocsCount > 0 ? `${expiringDocsCount} document${expiringDocsCount !== 1 ? 's' : ''} expire${expiringDocsCount !== 1 ? 'nt' : ''} bientôt` : "Documents"}
               >
                 <FolderOpen className="h-5 w-5" />
                 {expiringDocsCount > 0 && (
@@ -194,7 +202,7 @@ export function Header() {
               <button
                 onClick={handleLogout}
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                title="Deconnexion"
+                title="Déconnexion"
               >
                 <LogOut className="h-5 w-5" />
               </button>

@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
 
 export const metadata: Metadata = {
-  title: "Infinity Express Business | Services Multiservices RDC",
+  title: "Infinity Express Business | Services multiservices en RDC",
   description:
     "IEB - Entreprise de services polyvalente à Lubumbashi, RDC. Nettoyage industriel, services administratifs, facilitation pour entreprises minières.",
   generator: "v0.app",
@@ -23,19 +23,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 };
 

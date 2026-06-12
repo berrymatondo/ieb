@@ -40,7 +40,7 @@ function LoginForm() {
           return
         }
         if (password.length < 8) {
-          setError("Le mot de passe doit contenir au moins 8 caracteres")
+          setError("Le mot de passe doit contenir au moins 8 caractères")
           setLoading(false)
           return
         }
@@ -52,9 +52,9 @@ function LoginForm() {
         })
 
         if (result.error) {
-          setError(result.error.message || "Erreur lors de la creation du compte")
+          setError(result.error.message || "Erreur lors de la création du compte")
         } else {
-          setSuccess("Compte cree avec succes! Vous pouvez maintenant vous connecter.")
+          setSuccess("Compte créé avec succès ! Vous pouvez maintenant vous connecter.")
           setIsSignUp(false)
           setPassword("")
           setConfirmPassword("")
@@ -72,7 +72,7 @@ function LoginForm() {
         }
       }
     } catch (err) {
-      setError("Une erreur est survenue. Veuillez reessayer.")
+      setError("Une erreur est survenue. Veuillez réessayer.")
     } finally {
       setLoading(false)
     }
@@ -87,28 +87,29 @@ function LoginForm() {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
-          Retour a l&apos;accueil
+          Retour à l&apos;accueil
         </Link>
 
         <div className="bg-card rounded-2xl shadow-xl border border-border p-8">
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <Image
-              src="/placeholder-logo.png"
-              alt="IEB Logo"
-              width={80}
-              height={80}
-              className="rounded-xl"
+              src="/images/ieb-logo.jpeg"
+              alt="Logo Infinity Express Business"
+              width={180}
+              height={120}
+              className="h-auto w-40 rounded-lg object-contain"
+              priority
             />
           </div>
 
           <h1 className="text-2xl font-bold text-center text-foreground mb-2">
-            {isSignUp ? "Creer un compte" : "Connexion Admin"}
+            {isSignUp ? "Créer un compte" : "Connexion admin"}
           </h1>
           <p className="text-sm text-muted-foreground text-center mb-8">
             {isSignUp 
-              ? "Creez un nouveau compte administrateur" 
-              : "Acces reserve aux administrateurs IEB"}
+              ? "Créez un nouveau compte administrateur"
+              : "Accès réservé aux administrateurs IEB"}
           </p>
 
           {error && (
@@ -209,11 +210,11 @@ function LoginForm() {
               disabled={loading}
             >
               {loading ? (
-                isSignUp ? "Creation en cours..." : "Connexion en cours..."
+                isSignUp ? "Création en cours..." : "Connexion en cours..."
               ) : (
                 <>
                   {isSignUp ? <UserPlus className="h-5 w-5 mr-2" /> : <LogIn className="h-5 w-5 mr-2" />}
-                  {isSignUp ? "Creer le compte" : "Se connecter"}
+                  {isSignUp ? "Créer le compte" : "Se connecter"}
                 </>
               )}
             </Button>
@@ -232,16 +233,16 @@ function LoginForm() {
               className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors text-center"
             >
               {isSignUp ? (
-                <>Deja un compte? <span className="text-primary font-medium">Se connecter</span></>
+                <>Déjà un compte ? <span className="text-primary font-medium">Se connecter</span></>
               ) : (
-                <>Pas encore de compte? <span className="text-primary font-medium">Creer un compte</span></>
+                <>Pas encore de compte ? <span className="text-primary font-medium">Créer un compte</span></>
               )}
             </button>
           </div>
         </div>
 
         <p className="text-center text-xs text-muted-foreground mt-6">
-          © {new Date().getFullYear()} IEB - Tous droits reserves
+          © {new Date().getFullYear()} IEB - Tous droits réservés
         </p>
       </div>
     </div>

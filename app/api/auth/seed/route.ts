@@ -19,7 +19,7 @@ async function createAdminUser() {
 
     if (existingUser) {
       return NextResponse.json({ 
-        message: "Admin user already exists", 
+        message: "L'utilisateur administrateur existe déjà",
         email: "admin@admin.com" 
       })
     }
@@ -35,7 +35,7 @@ async function createAdminUser() {
 
     if (!response) {
       return NextResponse.json(
-        { error: "Failed to create admin user" },
+        { error: "Impossible de créer l'utilisateur administrateur" },
         { status: 500 }
       )
     }
@@ -48,14 +48,14 @@ async function createAdminUser() {
 
     return NextResponse.json({ 
       success: true, 
-      message: "Admin user created successfully",
+      message: "Utilisateur administrateur créé avec succès",
       email: "admin@admin.com",
       password: "iebadmin123"
     })
   } catch (error) {
     console.error("Error seeding admin:", error)
     return NextResponse.json(
-      { error: "Failed to create admin user", details: error instanceof Error ? error.message : "Unknown error" },
+      { error: "Impossible de créer l'utilisateur administrateur", details: error instanceof Error ? error.message : "Erreur inconnue" },
       { status: 500 }
     )
   }

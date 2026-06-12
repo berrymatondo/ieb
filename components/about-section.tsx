@@ -5,12 +5,12 @@ import { CheckCircle2 } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 
 const features = [
-  "Entreprise certifiee et en regle",
-  "Equipes qualifiees et experimentees",
-  "Presence etablie a Lubumbashi",
-  "Partenaire des societes minieres",
-  "Services personnalises",
-  "Reactivite et professionnalisme",
+  "Entreprise certifiée et en règle",
+  "Équipes qualifiées et expérimentées",
+  "Présence établie à Lubumbashi",
+  "Partenaire des sociétés minières",
+  "Services personnalisés",
+  "Réactivité et professionnalisme",
 ]
 
 export function AboutSection() {
@@ -20,16 +20,16 @@ export function AboutSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 items-center">
           <AnimatedSection direction="left">
             <p className="text-xs sm:text-sm font-medium text-primary mb-2 tracking-wider uppercase">
-              A propos de nous
+              À propos de nous
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground text-balance">
-              Une entreprise multiservices agile au service de votre reussite
+              Une entreprise multiservices agile au service de votre réussite
             </h2>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Basee au 55, Avenue Lac Kipopo a Lubumbashi, Infinity Express Business SARLU est une entreprise de services polyvalente creee en septembre 2025. Notre vision : une ouverture d&apos;esprit sans limites pour repondre a tous vos besoins en RDC et a l&apos;etranger.
+              Basée au 55, Avenue Lac Kipopo à Lubumbashi, Infinity Express Business SARLU est une entreprise de services polyvalente créée en septembre 2025. Notre vision : une ouverture d&apos;esprit sans limites pour répondre à tous vos besoins en RDC et à l&apos;étranger.
             </p>
             <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Sous la direction de Madame BOLEKOLA MBOKA Gadielle, notre equipe s&apos;engage a fournir des services de qualite superieure dans la promotion commerciale, le transport, la sous-traitance, l&apos;immobilier, l&apos;agriculture et les energies renouvelables.
+              Sous la direction de Madame BOLEKOLA MBOKA Gadielle, notre équipe s&apos;engage à fournir des services de qualité supérieure dans la promotion commerciale, le transport, la sous-traitance, l&apos;immobilier, l&apos;agriculture et les énergies renouvelables.
             </p>
 
             <ul className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
@@ -50,7 +50,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl group">
               <Image
                 src="/images/about-team.jpg"
-                alt="Equipe Infinity Express Business"
+                alt="Équipe Infinity Express Business"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -60,7 +60,15 @@ export function AboutSection() {
             <div className="hidden sm:block absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
             {/* Stats overlay */}
             <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-card p-3 sm:p-4 rounded-lg sm:rounded-xl shadow-lg border border-border transition-transform duration-300 hover:scale-105">
-              <p className="text-2xl sm:text-3xl font-bold text-primary">IEB</p>
+              <div className="relative h-10 w-16 sm:h-12 sm:w-20">
+                <Image
+                  src="/images/ieb-logo.jpeg"
+                  alt="Logo Infinity Express Business"
+                  fill
+                  sizes="80px"
+                  className="object-contain"
+                />
+              </div>
               <p className="text-xs sm:text-sm text-muted-foreground">Lubumbashi, RDC</p>
             </div>
           </AnimatedSection>

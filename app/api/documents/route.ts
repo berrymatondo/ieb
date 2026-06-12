@@ -25,6 +25,6 @@ export async function GET() {
     return NextResponse.json({ documents: mapped })
   } catch (error) {
     console.error("Error listing documents:", error)
-    return NextResponse.json({ error: "Erreur lors de la recuperation des documents" }, { status: 500 })
+    return NextResponse.json({ error: "Erreur lors de la récupération des documents" }, { status: 500 })
   }
 }

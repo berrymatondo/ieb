@@ -61,7 +61,7 @@ export default function ParametresPage() {
                 <Settings className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Parametres</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Paramètres</h1>
                 <p className="text-muted-foreground">Configurez les options de l&apos;application</p>
               </div>
             </div>
@@ -71,7 +71,7 @@ export default function ParametresPage() {
           {saved && (
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-3 text-green-700">
               <CheckCircle2 className="h-5 w-5" />
-              <span>Parametres enregistres avec succes !</span>
+              <span>Paramètres enregistrés avec succès !</span>
             </div>
           )}
 
@@ -84,7 +84,7 @@ export default function ParametresPage() {
                 </div>
                 <div>
                   <CardTitle>Documents</CardTitle>
-                  <CardDescription>Parametres lies a la gestion des documents</CardDescription>
+                  <CardDescription>Paramètres liés à la gestion des documents</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -92,10 +92,10 @@ export default function ParametresPage() {
               <div className="space-y-4">
                 <div>
                   <Label htmlFor="expiringWeeks" className="text-base font-medium">
-                    Delai d&apos;alerte avant expiration
+                    Délai d&apos;alerte avant expiration
                   </Label>
                   <p className="text-sm text-muted-foreground mt-1 mb-3">
-                    Les documents expirant dans ce delai seront signales par une notification dans le header.
+                    Les documents expirant dans ce délai seront signalés par une notification dans l&apos;en-tête.
                   </p>
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function ParametresPage() {
                   <div className="flex items-start gap-3">
                     <Bell className="h-5 w-5 text-orange-500 mt-0.5" />
                     <div className="text-sm">
-                      <p className="font-medium text-foreground">Apercu</p>
+                      <p className="font-medium text-foreground">Aperçu</p>
                       <p className="text-muted-foreground mt-1">
                         Avec cette configuration, vous recevrez une notification pour les documents 
                         expirant dans les <span className="font-semibold text-orange-600">{expiringWeeks} prochaines semaines</span>.
@@ -135,7 +135,7 @@ export default function ParametresPage() {
           {/* Actions */}
           <div className="flex items-center justify-between">
             <Button variant="outline" onClick={handleReset}>
-              Reinitialiser par defaut
+              Réinitialiser par défaut
             </Button>
             <Button onClick={handleSave} disabled={!hasChanges} className="gap-2">
               <Save className="h-4 w-4" />
@@ -146,8 +146,8 @@ export default function ParametresPage() {
           {/* Info */}
           <div className="mt-8 p-4 bg-muted/30 rounded-xl border border-border">
             <p className="text-sm text-muted-foreground">
-              Les parametres sont sauvegardes localement dans votre navigateur. 
-              Ils seront conserves meme apres la fermeture de la page.
+              Les paramètres sont sauvegardés localement dans votre navigateur.
+              Ils seront conservés même après la fermeture de la page.
             </p>
           </div>
         </div>

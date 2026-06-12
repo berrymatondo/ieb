@@ -14,7 +14,7 @@ export async function GET() {
   } catch (error) {
     console.error("Error fetching messages:", error)
     return NextResponse.json(
-      { error: "Erreur lors de la recuperation des messages" },
+      { error: "Erreur lors de la récupération des messages" },
       { status: 500 }
     )
   }

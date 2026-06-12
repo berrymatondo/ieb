@@ -27,7 +27,7 @@ export function CTASection() {
                 Parlons de votre projet
               </h2>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg text-background/70 leading-relaxed">
-                Que vous soyez une entreprise miniere, une PME ou un particulier, nous sommes prets a vous accompagner dans vos demarches.
+                Que vous soyez une entreprise minière, une PME ou un particulier, nous sommes prêts à vous accompagner dans vos démarches.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg" asChild>

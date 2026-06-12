@@ -22,9 +22,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Presentation | Infinity Express Business",
+  title: "Présentation | Infinity Express Business",
   description:
-    "Decouvrez IEB SARLU, une entreprise de services polyvalente a Lubumbashi. Notre mission, vision, valeurs et domaines d'activite selon nos statuts officiels.",
+    "Découvrez IEB SARLU, une entreprise de services polyvalente à Lubumbashi. Notre mission, notre vision, nos valeurs et nos domaines d'activité selon nos statuts officiels.",
 };
 
 const ARSP_LINK =
@@ -35,19 +35,19 @@ const values = [
     icon: Target,
     title: "Ouverture d'esprit",
     description:
-      "Une vision sans limites pour repondre a tous vos besoins, quelle que soit leur nature.",
+      "Une vision sans limites pour répondre à tous vos besoins, quelle que soit leur nature.",
   },
   {
     icon: Eye,
-    title: "Flexibilite",
+    title: "Flexibilité",
     description:
-      "Adaptation constante aux exigences du marche et aux besoins specifiques de chaque client.",
+      "Adaptation constante aux exigences du marché et aux besoins spécifiques de chaque client.",
   },
   {
     icon: Heart,
     title: "Excellence",
     description:
-      "Engagement envers la qualite et le professionnalisme dans chaque service rendu.",
+      "Engagement envers la qualité et le professionnalisme dans chaque service rendu.",
   },
 ];
 
@@ -58,7 +58,7 @@ const domains = [
     image: "/images/service-admin.jpg",
     items: [
       "Fournitures de bureau et imprimerie",
-      "Habillement et cosmetique",
+      "Habillement et cosmétique",
       "Production et distribution",
       "Manutention et transit",
     ],
@@ -68,21 +68,21 @@ const domains = [
     title: "Transport et logistique",
     image: "/images/service-mining.jpg",
     items: [
-      "Location de vehicules",
+      "Location de véhicules",
       "Transport de marchandises",
       "Transport de voyageurs",
-      "Achat et vente de vehicules",
+      "Achat et vente de véhicules",
     ],
   },
   {
     icon: Pickaxe,
-    title: "Sous-traitance de service",
+    title: "Sous-traitance de services",
     image: "/images/service-cleaning.jpg",
     items: [
       "Certification ARSP",
-      "Partenariats strategiques",
+      "Partenariats stratégiques",
       "Prestations de services",
-      "Accompagnement operationnel",
+      "Accompagnement opérationnel",
     ],
   },
   {
@@ -90,27 +90,27 @@ const domains = [
     title: "Immobilier",
     image: "/images/contact-office.jpg",
     items: [
-      "Gestion immobiliere",
-      "Location de batiments",
+      "Gestion immobilière",
+      "Location de bâtiments",
       "Achat et vente",
       "Administration de biens",
     ],
   },
   {
     icon: Leaf,
-    title: "Agriculture et elevage",
+    title: "Agriculture et élevage",
     image: "/images/hero-team.jpg",
-    items: ["Agriculture", "Peche", "Elevage", "Agroalimentaire"],
+    items: ["Agriculture", "Pêche", "Élevage", "Agroalimentaire"],
   },
   {
     icon: Sun,
-    title: "Environnement et energie",
+    title: "Environnement et énergie",
     image: "/images/about-team.jpg",
     items: [
       "Tourisme",
       "Assainissement",
-      "Energie solaire",
-      "Energies renouvelables",
+      "Énergie solaire",
+      "Énergies renouvelables",
     ],
   },
 ];
@@ -118,7 +118,7 @@ const domains = [
 const companyInfo = {
   name: "INFINITY EXPRESS BUSINESS",
   acronym: "IEB SARLU",
-  form: "Societe a Responsabilite Limitee Unipersonnelle",
+  form: "Société à Responsabilité Limitée Unipersonnelle",
   rccm: "CD/LSH/RCCM/25-B-01750",
   capital: "3 000 USD",
   duration: "99 ans",
@@ -137,7 +137,7 @@ export default function PresentationPage() {
           <div className="absolute inset-0">
             <Image
               src="/images/about-team.jpg"
-              alt="Equipe IEB"
+              alt="Équipe IEB"
               fill
               className="object-cover"
               priority
@@ -153,9 +153,9 @@ export default function PresentationPage() {
                 Infinity Express Business
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-background/80">
-                Basee a Lubumbashi, en Republique Democratique du Congo, IEB
+                Basée à Lubumbashi, en République démocratique du Congo, IEB
                 SARLU est une entreprise de services polyvalente avec une vision
-                large. Nous simplifions la vie administrative et operationnelle
+                large. Nous simplifions la vie administrative et opérationnelle
                 des particuliers et entreprises.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -182,8 +182,14 @@ export default function PresentationPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground font-bold text-lg">
-                  IEB
+                <div className="relative h-14 w-20 overflow-hidden rounded-lg bg-white">
+                  <Image
+                    src="/images/ieb-logo.jpeg"
+                    alt="Logo Infinity Express Business"
+                    fill
+                    sizes="80px"
+                    className="object-contain"
+                  />
                 </div>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground">
@@ -194,7 +200,7 @@ export default function PresentationPage() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+{/*               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div className="p-4 bg-muted rounded-xl">
                   <p className="text-xs text-muted-foreground mb-1">RCCM</p>
                   <p className="text-sm font-semibold text-foreground">
@@ -210,24 +216,24 @@ export default function PresentationPage() {
                   </p>
                 </div>
                 <div className="p-4 bg-muted rounded-xl">
-                  <p className="text-xs text-muted-foreground mb-1">Duree</p>
+                  <p className="text-xs text-muted-foreground mb-1">Durée</p>
                   <p className="text-sm font-semibold text-foreground">
                     {companyInfo.duration}
                   </p>
                 </div>
                 <div className="p-4 bg-muted rounded-xl">
-                  <p className="text-xs text-muted-foreground mb-1">Creee en</p>
+                  <p className="text-xs text-muted-foreground mb-1">Créée en</p>
                   <p className="text-sm font-semibold text-foreground">
                     {companyInfo.founded}
                   </p>
                 </div>
-              </div>
+              </div> */}
               <div className="mt-6 pt-6 border-t border-border">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                   <div className="flex items-center gap-3">
                     <Users className="h-5 w-5 text-primary" />
                     <div>
-                      <p className="text-xs text-muted-foreground">Gerante</p>
+                      <p className="text-xs text-muted-foreground">Gérante</p>
                       <p className="text-sm font-medium text-foreground">
                         {companyInfo.manager}
                       </p>
@@ -237,7 +243,7 @@ export default function PresentationPage() {
                     <Building2 className="h-5 w-5 text-primary shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground">
-                        Siege social
+                        Siège social
                       </p>
                       <p className="text-sm font-medium text-foreground">
                         {companyInfo.address}
@@ -259,14 +265,14 @@ export default function PresentationPage() {
                   <Target className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
-                  Notre Mission
+                  Notre mission
                 </h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Fournir des services de qualite superieure qui simplifient et
+                  Fournir des services de qualité supérieure qui simplifient et
                   facilitent la vie quotidienne de nos clients. Nous nous
-                  engageons a etre le partenaire de confiance pour toutes les
-                  demarches administratives et operationnelles en RDC et a
-                  l&apos;etranger.
+                  engageons à être le partenaire de confiance pour toutes les
+                  démarches administratives et opérationnelles en RDC et à
+                  l&apos;étranger.
                 </p>
               </div>
               <div className="p-5 sm:p-8 border border-border rounded-xl sm:rounded-2xl bg-card hover:shadow-lg transition-shadow">
@@ -274,13 +280,13 @@ export default function PresentationPage() {
                   <Eye className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
-                  Notre Vision
+                  Notre vision
                 </h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   Devenir le leader des services multiservices en RDC, reconnu
-                  pour notre excellence, notre fiabilite et notre capacite
-                  d&apos;adaptation. Nous aspirons a accompagner la croissance
-                  economique de notre pays.
+                  pour notre excellence, notre fiabilité et notre capacité
+                  d&apos;adaptation. Nous aspirons à accompagner la croissance
+                  économique de notre pays.
                 </p>
               </div>
             </div>
@@ -292,10 +298,10 @@ export default function PresentationPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
               <p className="text-xs sm:text-sm font-medium text-primary mb-2 tracking-wider uppercase">
-                Ce qui nous definit
+                Ce qui nous définit
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
-                Nos Valeurs
+                Nos valeurs
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
@@ -327,11 +333,11 @@ export default function PresentationPage() {
                 Article 4 - Objet social
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground text-balance">
-                Domaines d&apos;activite
+                Domaines d&apos;activité
               </h2>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-                Conformement a nos statuts, IEB opere en Republique Democratique
-                du Congo et a l&apos;etranger dans les domaines suivants :
+                Conformément à nos statuts, IEB opère en République démocratique
+                du Congo et à l&apos;étranger dans les domaines suivants :
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -382,12 +388,12 @@ export default function PresentationPage() {
                 Certification officielle
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary-foreground mb-4">
-                Entreprise enregistree aupres de l&apos;ARSP
+                Entreprise enregistrée auprès de l&apos;ARSP
               </h2>
               <p className="text-base sm:text-lg text-primary-foreground/80 leading-relaxed mb-8">
-                Infinity Express Business est officiellement enregistree aupres
-                de l&apos;Autorite de Regulation de la Sous-traitance dans le
-                secteur Prive (ARSP) en Republique Democratique du Congo.
+                Infinity Express Business est officiellement enregistrée auprès
+                de l&apos;Autorité de régulation de la sous-traitance dans le
+                secteur privé (ARSP) en République démocratique du Congo.
               </p>
               <Button
                 asChild

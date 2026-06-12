@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-team.jpg"
-          alt="Equipe IEB au travail"
+          alt="Équipe IEB au travail"
           fill
           className="object-cover transition-transform duration-[2s] ease-out"
           style={{ transform: isLoaded ? "scale(1)" : "scale(1.1)" }}
@@ -48,7 +48,7 @@ export function HeroSection() {
               transitionDelay: "400ms"
             }}
           >
-            Simplifier votre vie administrative et operationnelle
+            Simplifier votre vie administrative et opérationnelle
           </h1>
           <p 
             className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-background/80 max-w-2xl transition-all duration-700 ease-out"
@@ -58,7 +58,7 @@ export function HeroSection() {
               transitionDelay: "600ms"
             }}
           >
-            Infinity Express Business SARLU est votre partenaire de confiance pour la promotion commerciale, le transport, la sous-traitance de services, l&apos;immobilier et bien plus a Lubumbashi.
+            Infinity Express Business SARLU est votre partenaire de confiance pour la promotion commerciale, le transport, la sous-traitance de services, l&apos;immobilier et bien plus à Lubumbashi.
           </p>
           <div 
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 transition-all duration-700 ease-out"
@@ -76,7 +76,7 @@ export function HeroSection() {
             </Button>
             <Button size="lg" variant="ghost" className="border border-background/40 bg-transparent text-background hover:bg-background/10 hover:text-background transition-all duration-300 hover:scale-105" asChild>
               <Link href="/presentation">
-                Decouvrir nos services
+                Découvrir nos services
               </Link>
             </Button>
           </div>

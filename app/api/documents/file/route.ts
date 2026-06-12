@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const id = request.nextUrl.searchParams.get("id")
 
     if (!id) {
-      return NextResponse.json({ error: "Missing id" }, { status: 400 })
+      return NextResponse.json({ error: "Identifiant manquant" }, { status: 400 })
     }
 
     const doc = await prisma.document.findUnique({
@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
     })
 
     if (!doc) {
-      return new NextResponse("Not found", { status: 404 })
+      return new NextResponse("Fichier introuvable", { status: 404 })
     }
 
     return new NextResponse(doc.data, {
@@ -28,6 +28,6 @@ export async function GET(request: NextRequest) {
     })
   } catch (error) {
     console.error("Error serving file:", error)
-    return NextResponse.json({ error: "Failed to serve file" }, { status: 500 })
+    return NextResponse.json({ error: "Impossible de servir le fichier" }, { status: 500 })
   }
 }

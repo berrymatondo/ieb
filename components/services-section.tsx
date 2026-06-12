@@ -8,19 +8,19 @@ const services = [
   {
     icon: Sparkles,
     title: "Promotion commerciale",
-    description: "Fournitures de bureau, imprimerie, habillement, cosmetique, production et distribution. Manutention et transit pour vos marchandises.",
+    description: "Fournitures de bureau, imprimerie, habillement, cosmétique, production et distribution. Manutention et transit pour vos marchandises.",
     image: "/images/service-admin.jpg",
   },
   {
     icon: FileText,
     title: "Transport et logistique",
-    description: "Location de vehicules, transport de marchandises et de voyageurs. Achat et vente de vehicules pour repondre a tous vos besoins.",
+    description: "Location de véhicules, transport de marchandises et de voyageurs. Achat et vente de véhicules pour répondre à tous vos besoins.",
     image: "/images/service-mining.jpg",
   },
   {
     icon: Pickaxe,
-    title: "Sous-traitance de service",
-    description: "Entreprise certifiee ARSP pour accompagner les societes dans leurs operations. Prestations de services et partenariats strategiques.",
+    title: "Sous-traitance de services",
+    description: "Entreprise certifiée ARSP pour accompagner les sociétés dans leurs opérations. Prestations de services et partenariats stratégiques.",
     image: "/images/service-cleaning.jpg",
   },
 ]
@@ -34,7 +34,7 @@ export function ServicesSection() {
             Ce que nous faisons
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground text-balance">
-            Une approche globale pour un modele d&apos;avenir
+            Une approche globale pour un modèle d&apos;avenir
           </h2>
           <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
             Notre collection de services couvre tous les besoins de transformation et de facilitation pour les entreprises et particuliers.
@@ -79,10 +79,10 @@ export function ServicesSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">
-                  Immobilier, Agriculture et Energie
+                  Immobilier, agriculture et énergie
                 </h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Gestion immobiliere, location et vente de batiments. Agriculture, peche et elevage. Promotion de l&apos;energie solaire et renouvelable. Tourisme et assainissement environnemental.
+                  Gestion immobilière, location et vente de bâtiments. Agriculture, pêche et élevage. Promotion de l&apos;énergie solaire et renouvelable. Tourisme et assainissement environnemental.
                 </p>
               </div>
             </div>

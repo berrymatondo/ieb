@@ -1,15 +1,15 @@
 // Configuration centrale de l'application
 
-// Valeurs par defaut
+// Valeurs par défaut
 export const DEFAULT_CONFIG = {
   // Nombre de SEMAINES avant expiration pour afficher une notification
   EXPIRING_SOON_WEEKS: 4,
 }
 
-// Cle de stockage localStorage
+// Clé de stockage localStorage
 const STORAGE_KEY = "ieb_app_config"
 
-// Recuperer la configuration depuis localStorage (cote client uniquement)
+// Récupérer la configuration depuis localStorage (côté client uniquement)
 export function getConfig() {
   if (typeof window === "undefined") {
     return DEFAULT_CONFIG
@@ -47,5 +47,5 @@ export function getExpiringSoonDays() {
   return getConfig().EXPIRING_SOON_WEEKS * 7
 }
 
-// Pour la compatibilite avec le code existant
+// Pour la compatibilité avec le code existant
 export const CONFIG = DEFAULT_CONFIG
